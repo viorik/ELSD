@@ -61,7 +61,7 @@ OUTPUT
 In the console, the name of the output svg file is displayed, and the number
 of features of each type. For the 'stars.pgm' image, the output is
 stars.pgm.svg
-17 elliptical arcs, 310 circular arcs, 165 line segments.
+16 elliptical arcs, 322 circular arcs, 165 line segments.
 
  
 
