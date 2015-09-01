@@ -17,7 +17,7 @@
 
 
 elsd :	elsd.c valid_curve.c process_curve.c process_line.c write_svg.c
-	cc -o elsd elsd.c valid_curve.c process_curve.c process_line.c write_svg.c -llapack_LINUX -lblas_LINUX -llibf2c -lm
+	cc -o elsd elsd.c valid_curve.c process_curve.c process_line.c write_svg.c -llapack -lblas -lm #-llibf2c
 
 
 

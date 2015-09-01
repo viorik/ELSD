@@ -1,5 +1,5 @@
 # ELSD
-Ellipse and Segment Line Detector
+Ellipse and Line Segment Detector
 
 Source code taken from the ELSD project page: http://ubee.enseeiht.fr/vision/ELSD/
 
@@ -10,7 +10,7 @@ The files in this folder contain the source code of ELSD, published in
 'A Parameterless Line Segment and Elliptical Arc Detector with Enhanced Ellipse
 Fitting', V. Patraucean, P. Gurdjos, R. Grompone von Gioi, ECCV2012.
 
-Corresponding author: viorica patraucean vpatrauc@enseeiht.fr.  
+Corresponding author: viorica patraucean vpatrauc@gmail.com.  
  
 The code generating and validating line segment hypotheses is taken up from 
 LSD source code, available at http://www.ipol.im/pub/art/2012/gjmr-lsd/.
@@ -20,6 +20,9 @@ the terms of the GNU Affero General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option) any
 later version. 
 
+If you use this code in your research, please cite the paper above.
+
+Note that an enhanced version of the detector is available at <a>https://github.com/viorik/ELSDc</a>.
 
 REQUIREMENTS
 The ELSD source code needs the CLAPACK/CBLAS library for some linear algebra 

@@ -1040,6 +1040,23 @@ void region_grow( int x, int y, image_double angles, struct point * reg,
 /*----------------------------------------------------------------------------*/
 /** 
  */
+void init_rect(struct rect *rec)
+{
+  rec->x1 = 0.0; rec->y1 = 0.0;
+  rec->x2 = 0.0; rec->y2 = 0.0;
+  rec->x  = 0.0; rec->y  = 0.0;
+  rec->dx = 0.0; rec->dy = 0.0;
+  rec->width = 0.0;
+  rec->theta = 0.0;
+  rec->p = 0.0; rec->prec = 0.0;
+}
+/*----------------------------------------------------------------------------*/
+
+
+
+/*----------------------------------------------------------------------------*/
+/** 
+ */
 void EllipseDetection(image_double image,double rho,double prec,double p, 
                       double eps,int smooth,int *ell_count, 
                       int *circ_count,int *line_count,char *fstr)
@@ -1067,7 +1084,7 @@ void EllipseDetection(image_double image,double rho,double prec,double p,
   double reg_angle;
   int pext[8];
   unsigned int xsz0,ysz0;
-  
+  char svgname[300];
   xsz0 = image->xsize;
   ysz0 = image->ysize;
 
@@ -1086,7 +1103,8 @@ void EllipseDetection(image_double image,double rho,double prec,double p,
   ysize = angles->ysize;
 
   /* display detection result */
-  svg = init_svg(strcat(fstr,".svg"),xsz0,ysz0);
+  sprintf(svgname,"%s.svg",fstr);
+  svg = init_svg(svgname,xsz0,ysz0);
   
   /* number of tests for elliptical arcs */
   logNT[2] = 4.0 *(log10((double)xsize)+log10((double)ysize)) + log10(9.0) + log10(3.0); /* N^8 */
@@ -1113,6 +1131,8 @@ void EllipseDetection(image_double image,double rho,double prec,double p,
   /* init temporary buffers */
   gBufferDouble = (double*)malloc(sizeof(double));
   gBufferInt    = (int*)malloc(sizeof(int));
+
+  init_rect(&rec);
 
   /* begin primitive detection */
   for(;list_p; list_p = list_p->next)

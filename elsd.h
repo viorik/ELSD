@@ -196,6 +196,8 @@ double dist(double x1, double y1, double x2, double y2);
 
 void get_cadran(double angle, int* cad);
 
+void init_rect(struct rect *rec);
+
 int check_ellipse(double *param);
 double nfa(int n, int k, double p, double logNT);
 void region_grow(int x, int y, image_double angles, struct point * reg,
